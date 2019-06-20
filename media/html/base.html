@@ -1,0 +1,46 @@
+<html>
+
+	<head>
+		<meta name="description" content="Upload mp4 and webm videos anonymously.">
+		<meta name="keywords" content="mp4, webm, upload, uploader, anonymous">
+		<link rel="shortcut icon" href="/media/img/favicon.ico?v=4" type="image/x-icon"> 
+		<link rel="stylesheet" href="/media/css/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" type="text/css" href="/media/css/style.css?v=71"> 
+
+		<link rel="stylesheet" type="text/css" href="/media/js/contextmenu/contextmenu.css"> 
+		<script type="text/javascript" src="/media/js/jquery.js"></script>
+		<script type="text/javascript" src="/media/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/media/js/contextmenu/contextmenu.js"></script>
+		<link rel="stylesheet" type="text/css" href="/media/js/contextmenu/position.js"> 
+		
+		<script src="/media/js/base.js?v=140"></script>
+
+		<script>
+			videos_root = "https://merkoba.nyc3.digitaloceanspaces.com/hbv"
+			thumbs_root = "https://merkoba.nyc3.digitaloceanspaces.com/hbt"
+
+			theme = localStorage.getItem('theme');
+			if(theme == null)
+			{
+				theme = 'light';
+				localStorage.setItem('theme', 'light');
+			}
+			if(theme == 'light')
+			{
+				$('head').append('<link rel="stylesheet" type="text/css" href="/media/css/light_theme.css?v=10">');
+			}
+			else
+			{
+				$('head').append('<link rel="stylesheet" type="text/css" href="/media/css/dark_theme.css?v=10">');
+			}
+		</script>		
+
+		{%block head %}{% endblock %}
+	</head>
+
+	<body>
+		{%block body %}{% endblock %}
+	</body>
+
+</html>

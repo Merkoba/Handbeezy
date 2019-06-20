@@ -1,0 +1,69 @@
+<html>
+    
+    <head>
+        <title> login </title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/media/img/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/media/js/jquery.js"></script>
+        <script type="text/javascript">
+
+            function activate_key_detection()
+            {
+                 $(document).keydown(function(e)
+                 {
+                    code = (e.keyCode ? e.keyCode : e.which);
+
+                    if(code === 13)
+                    {
+                        if($('#input').is(':focus'))
+                        {
+                            document.form.submit();
+                        }
+                    }
+
+                 });
+            }
+
+            $(function()
+            {
+                activate_key_detection();
+                $('#input').focus();
+            })
+
+         </script>
+
+         <style>
+
+            body, html 
+            {
+                font-family: sans-serif;
+                background-image:url(/media/img/collage.jpg);background-repeat:repeat; 
+            }
+
+            #input
+            {
+                font-size: 3em;
+                padding: 0.2em;
+                z-index: 999999;
+                color: #5F5F5F;
+                width:14em;
+                height:2em;
+                position:absolute;
+                left:50%;
+                top:50%;
+                margin:-1em 0 0 -7em;
+
+            }
+
+         </style>
+    </head>
+    
+    <body>
+
+        <form method='post' action='.' name='form' id='form'> {% csrf_token %}
+            <input id='input' name='username' placeholder='write your username'>
+        </form>
+    
+    </body>
+
+</html>

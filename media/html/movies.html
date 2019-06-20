@@ -1,0 +1,93 @@
+<html>
+    
+    <head>
+        <title> movies </title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/media/img/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" type="text/css" href="/media/css/movies_style.css"> 
+        <link rel="stylesheet" type="text/css" href="/media/css/jquery-ui.css"> 
+        <script type="text/javascript" src="/media/js/jquery.js"></script>
+        <script type="text/javascript" src="/media/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="/media/js/handlebars.js"></script>
+        <script type="text/javascript" src="/media/js/nicescroll.js"></script>
+        <script src="/media/js/movies_base.js"></script>
+        <script type="text/javascript">
+            username = "{{username}}";
+            csrf_token = "{{csrf_token}}";
+            $(function()
+            {
+                init();
+            })
+         </script>
+    </head>
+    
+    <body>
+
+        <div id='overlay' onclick='hide_add_movie_form()'></div>
+
+        <div id='add_movie_form'>
+            <img id='stallone' src='/media/img/stallone.png' onclick='play_stallone_audio()'>
+            <div id='add_movie_info'> paste an IMDB url </div>
+            <input id='add_movie_input'>
+        </div>
+
+        <div id='overlay2' onclick='hide_add_torrent_form()'></div>
+
+        <div id='add_torrent_form'>
+            <img id='wiseau' src='/media/img/wiseau.png' onclick='play_wiseau_audio()'>
+            <div id='add_torrent_info'> paste a magnet link </div>
+            <input id='add_torrent_input'>
+        </div>
+
+        <div id='left'> 
+            <div id='left_inner'>
+                <div class='menu userlink' onclick='show_add_movie_form()'> +add </div>
+                <div class='menu userlink' onclick='get_movies_rank("overall")'>overall</div>
+                <div class='menu user_container' id='user_{{u}}'>
+                    <div class='userlink' onclick='get_movies_rank("{{username}}")'>{{username}}</div>
+                    <div class='logout_btn' onclick='logout()'>logout</div>
+                </div>
+                {% for u in users %} 
+                <div class='menu user_container' id='user_{{u}}'>
+                    <div class='userlink' onclick='get_movies_rank("{{u}}")'>{{u}}</div>
+                    <div class='remove_user_btn' id='remove_user_{{u}}' onclick='attempt_remove_user("{{u}}")'>remove</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id='right'></div>
+
+        {% verbatim %}
+
+        <script id='template_movies' type='text/x-handlebars-template'>
+            <div id='movies'>
+            {{#movies}}
+                <div class='movie' id='movie_{{id}}'>
+                     <div style='display:none' class='movie_id' id='{{id}}'></div>
+                     <div class='movie_left'>
+                         <a target='_blank' href='{{url}}'> <img src='{{poster}}' class='poster'> </a>
+                     </div>
+                     <div class='movie_right'>
+                         <span class='movie_title'> {{title}} </span>
+                         <span class='movie_genre'> {{genre}} </span>
+                         <div class='movie_plot'> {{plot}} </div>
+                         <span id='remove_{{id}}' class='btn' onclick='attempt_remove_movie({{id}})'>remove</span>
+                         {{#ifCond torrent '==' '0'}}
+                            <span id='torrent_{{id}}' class='btn' onclick='show_add_torrent_form({{id}})'>add torrent</span>
+                         {{else}}
+                            <a target='_blank' class='torrent' href='{{torrent}}'>torrent</a>
+                            <span id='torrent_{{id}}' class='btn' onclick='show_add_torrent_form({{id}})'>change torrent</span>
+                         {{/ifCond}}
+                     </div>
+                 </div>
+            {{/movies}}
+            </div>
+
+        </script>
+
+        {% endverbatim %}
+    
+    </body>
+
+</html>

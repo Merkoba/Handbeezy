@@ -1,0 +1,104 @@
+body, html
+{
+	background-color: #C2C2C2;
+}
+
+#info
+{
+	background-color: #848484;
+}
+
+#menu_container
+{
+	background-color: #737373;
+}
+
+#hover_suggestions_container
+{
+	background-color: #FAFAFA;
+}
+
+#hover_comments_container
+{
+	background-color: #FAFAFA;
+}
+
+button
+{
+	background-color: #c2c6d2;
+	color: #584a4a;
+	border: 1px solid #a9a9a9;
+}
+
+#form_container > button 
+{
+	border-top: 1px solid #a9a9a9 !important;
+	border-bottom: 1px solid #a9a9a9 !important;
+	border-left: 1px solid #c2c6d2 !important;
+	border-right: 1px solid #c2c6d2 !important;
+}
+
+button:hover 
+{
+	background-color: #b7bbca;
+}
+
+textarea
+{
+	background-color: #ced2de;
+	color: #424242;;
+}
+
+.reply 
+{
+	background-color: #f3f3f3;
+	border: 1px solid #e6e6e6;
+}
+
+.post_text
+{
+	color: #424242;
+}
+
+a.ext:link, a.ext:visited, a.ext:hover
+{
+	color: #484863;
+}
+
+.bottom_comments_msg
+{
+	color: #848484;
+}
+
+#popup_post
+{
+	background-color: #f3f3f3;
+	border: 1px solid #b7b7b7;
+	color: #424242;
+}
+
+.selected_reply
+{
+	background-color: #c3c3c3 !important;
+}
+
+a.scooter:link, a.scooter:visited, a.scooter:hover
+{
+	color: #dcdcef;
+}
+
+a.edit_link:link, a.edit_link:visited, a.edit_link:hover
+{
+	color: #dcdcef;
+	text-decoration: none;
+}
+
+.hover_icon
+{
+	color: grey;
+}
+
+.arrow 
+{
+	color: #62a055;
+}

@@ -1,0 +1,234 @@
+body, html
+{
+	background-color: white;
+	color: #5F5F5F;
+	font-family: sans-serif;
+	padding: 0.5em;
+	padding-top: 1em;
+}
+
+#overlay
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    background-color: #A7C0DC;
+    z-index: 99999;
+    display: none;
+}
+
+#add_movie_form
+{
+	color: white;
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    margin-top: -50px;
+    margin-left: -400px;
+    width: 800px;
+    height: 100px;
+    z-index: 999999;
+    display: none;
+}
+
+#add_movie_btn
+{
+	font-size: 3em;
+	cursor: pointer;
+}
+
+#add_movie_info
+{
+	font-size: 3em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+#add_movie_input
+{
+	color: #5F5F5F;
+	font-size: 3em;
+	padding: 0.2em;
+}
+
+#overlay2
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    background-color: #8BC067;
+    z-index: 99999;
+    display: none;
+}
+
+#add_torrent_form
+{
+	color: white;
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    margin-top: -50px;
+    margin-left: -400px;
+    width: 800px;
+    height: 100px;
+    z-index: 999999;
+    display: none;
+}
+
+#add_torrent_btn
+{
+	font-size: 3em;
+	cursor: pointer;
+}
+
+#add_torrent_info
+{
+	font-size: 3em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+#add_torrent_input
+{
+	color: #5F5F5F;
+	font-size: 3em;
+	padding: 0.2em;
+}
+
+#stallone
+{
+	display: block;
+	cursor: pointer;
+}
+
+#wiseau
+{
+	display: block;
+	cursor: pointer;
+}
+
+#my_username
+{
+	float: right;
+}
+
+.userlink
+{
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.menu
+{
+	padding-bottom: 0.5em;
+}
+
+.remove_user_btn
+{
+	padding-left: 0.11em;
+	cursor: pointer;
+}
+
+.userlink2
+{
+	font-size: 2em;
+	cursor: pointer;
+}
+
+#left
+{
+	position: fixed;
+	width: 25%;
+	float: left;
+	max-height: 90%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#left_inner
+{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#right
+{
+	position: relative;
+	width: 75%;
+	float: right;
+}
+
+.selected
+{
+	text-decoration: underline;
+}
+
+.movie_left
+{
+	display: table-cell;
+	vertical-align: top;
+}
+
+.movie_right
+{
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 2em;
+}
+
+.movie 
+{
+	display: table;
+	width: 70%;
+	padding-bottom: 4em;
+}
+
+#movies
+{
+	padding-left: 7em;
+}
+
+.poster
+{
+	height: 8em;
+}
+
+.movie_title
+{
+	font-size: 1.4em;
+}
+
+.movie_genre
+{
+	padding-left: 0.5em;
+}
+
+.movie_plot
+{
+	padding-top: 0.7em;
+	padding-bottom: 0.4em;
+}
+
+.btn
+{
+	cursor: pointer;
+	text-decoration: underline;
+	padding-right: 0.7em;
+}
+
+.logout_btn
+{
+	cursor:pointer;
+}
+
+a.torrent:hover, a.torrent:link, a.torrent:visited
+{
+	color: #5F5F5F;
+	padding-right: 0.7em;
+}

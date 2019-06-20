@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title> Edit Video - Handbeezy </title>
+
+		<link rel="shortcut icon" href="/media/img/favicon.ico?v=4" type="image/x-icon">
+
+		<style>
+			body, html 
+			{
+				font-size: 30px;
+				color: white;
+				background-color: #1D1F21;
+			}
+
+			#title
+			{
+				font-size: 26px;
+				width: 500px;
+			}
+
+			#video 
+			{
+				max-width: 400px;
+				max-height: 400px;
+			}
+
+			a:visited, a:link, a:hover 
+			{
+				color: #8194AA;
+			}
+		</style>
+	</head>
+	<body>
+
+		<br>
+
+		<form name='form' method='post' action='.'> {% csrf_token %}
+
+			title &nbsp; <input type='text' value='{{title}}' name='title' id='title'>
+
+<!-- 			<br><br>
+
+			{% if nsfw %}
+				nsfw <input type='checkbox' name='nsfw' id='nsfw' checked>
+			{% else %}
+				nsfw <input type='checkbox' name='nsfw' id='nsfw'>
+			{% endif %} -->
+
+			<br><br>
+
+			delete <input type='checkbox' name='delete' id='delete'>
+
+			<br><br>
+
+			<input type='submit' value='save'> &nbsp;&nbsp; <a href='../../'> return </a>
+
+		</form>
+
+	</body>
+</html>

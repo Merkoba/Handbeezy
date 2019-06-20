@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+
+	<title> Uploaded - Handbeezy </title>
+	<script type="text/javascript">
+	    $(function()
+	    {
+	        activate_key_detection();
+	        get_uploaded();
+	        $('#input_uploaded_search').focus();
+	        enable_jumper();
+	        search_uploaded(true);
+	    })
+	 </script>
+
+	 <style>
+	 	.button_catalog_search
+	 	{
+	 		width: 5em !important;
+	 		height: 2em !important;
+	 	}
+	 </style>
+
+{% endblock %}
+
+{% block body %} 
+
+	<div id='catalog_menu'>
+		<div class='catalog_titulo'>Uploaded Videos</div>
+		<a class='ext' href='/'>main</a>
+		<a class='ext' href='/add_video'>add video</a>
+		<a class='ext' href='/likes'>liked</a>
+		<a class='ext' href='/watched'>watched</a>
+		<a class='ext' href='/catalog'>catalog</a>
+		<!-- <a class='ext' href='/nsfw_catalog'>nsfw catalog</a> -->
+		<a class='ext' href='http://handbeezy.com/ads'>ads</a>
+		<a class='ext' href='http://wok3n.com'>music</a>
+		<br><br>
+		<input type='text' id='input_uploaded_search'>
+		<button style='font-size: 1.4em; padding: 0.3em'class='button_catalog_search' onclick='search_uploaded()'> search </button>
+	</div>
+
+	<div id='jumper' onclick='jump()'> &uarr; </div>
+
+
+	<div id='entries'> {{entries | safe}} </div>
+
+{% endblock %}
+

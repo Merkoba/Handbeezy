@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+
+	<title> {{title}} - Handbeezy </title>
+    <style>
+    	body, html 
+    	{
+    		overflow: hidden;
+    	}
+    </style>
+	<script type="text/javascript">
+	    // csrf_token = "{{csrf_token}}";
+	    video_id = "{{video_id}}";
+	    video_extension = "{{extension}}";
+	    video_time = {{time}};
+	    title = "{{title}}";
+	    play_likes = "{{play_likes}}";
+	    random_order = "{{random_order}}";
+	    $(function()
+	    {
+	        init();
+	    })
+	</script>
+
+{% endblock %}
+
+{% block body %}
+
+	<div id='top'> 
+		<div id='menu_container' class='unselectable'>
+	    	<i class='fa fa-align-justify hover_icon' id='hover_suggestions_icon' onclick='toggle_hover_suggestions()'> </i>
+	    	<a class='menu onlybig' href='/add_video'> + add video </a>
+	    	<span class='menu' onclick='previous_video()'> &lt; prev </span>
+	    	<span class='menu' onclick='next_video()'> next &gt; </span>
+	    	<span class='menu onlybig'> <input onclick='automatic_change()' id='autonext_checkbox' type='checkbox' name='autonext' value='autonext'> <span onclick='automatic_change2()'> automatic </span> </span>
+<!-- 	    	<span style='margin-left:-7px' class='menu onlybig'> <input onclick='nsfw_change()' id='nsfw_checkbox' type='checkbox' name='nsfw_checkbox' value='nsfw_checkbox'> <span onclick='nsfw_change2()'> nsfw </span> </span> -->
+	    	<a class='menu onlybig' href='/catalog'> catalog </a>
+	    	<i class='menu fa fa-sort-desc' id='other_menu_arrow' href='/catalog' onclick='toggle_other_menu()'> </i>
+	    	<i class='fa fa-comment hover_icon' id='hover_comments_icon' onclick='toggle_hover_comments()'> </i>
+	    </div>
+		<div id='info'>{{title}}</div>
+	</div>
+
+	<div id='other_menu' class='unselectable'>
+
+		<div class='onlysmall'> 
+
+			<div class='other_menu_item_container' onclick='window.location="/add_video"'>
+				<i class='other_menu_icon fa fa-plus'></i>
+				<div class='other_menu_item'> Add Video </div>
+			</div> 
+			
+			<div class='menu_divider'></div>
+			
+		</div>
+
+		<div class='onlysmall'> 
+
+			<div class='other_menu_item_container' onclick='window.location="/catalog"'>
+				<i class='other_menu_icon fa fa-book'></i>
+				<div class='other_menu_item'> Catalog </div>
+			</div> 
+
+			<div class='menu_divider'></div>
+
+		</div>
+
+		<div class='other_menu_item_container' onclick='window.location="/likes"'>
+			<i class='other_menu_icon fa fa-heart'></i>
+			<div class='other_menu_item'> Liked Videos </div>
+		</div>
+
+		<div class='menu_divider'></div>
+
+		<div class='other_menu_item_container' onclick='window.location="/watched"'>
+			<i class='other_menu_icon fa fa-calendar-check-o'></i>
+			<div class='other_menu_item'> Watched Videos </div>
+		</div>
+
+		<div class='menu_divider'></div>
+
+		<div class='other_menu_item_container' onclick='window.location="/uploaded"'>
+			<i class='other_menu_icon fa fa-upload'></i>
+			<div class='other_menu_item'> Uploaded Videos </div>
+		</div>
+
+		<div class='onlysmall'>
+			<div class='menu_divider'></div>
+
+			<div class='other_menu_item_container' onclick='automatic_change2()'>
+				<i class='other_menu_icon fa fa-forward'></i>
+				<div class='other_menu_item' id='other_menu_enable_automatic'> Enable Automatic </div>
+			</div>
+		</div>
+
+		<div class='onlybig'>
+			<div class='menu_divider'></div>
+
+			<div class='other_menu_item_container' onclick='show_shortcuts()'>
+				<i class='other_menu_icon fa fa-keyboard-o'></i>
+				<div class='other_menu_item'> Keyboard Shortcuts </div>
+			</div>
+		</div>
+
+		<div class='menu_divider'></div>
+
+		<div class='other_menu_item_container' onclick='change_theme()'>
+			<i class='other_menu_icon fa fa-paint-brush'></i>
+			<div class='other_menu_item'> Change Theme </div>
+		</div>
+
+		<div class='menu_divider'></div>
+
+		<div class='other_menu_item_container' onclick="window.location='/ads'">
+			<i class='other_menu_icon fa fa-star'></i>
+			<div class='other_menu_item'> Advertise On This Site </div>
+		</div>
+
+		<div class='onlybig'>
+
+		<div class='menu_divider'></div>
+			<div class='other_menu_item_container' onclick="show_suggestion_form()">
+				<i class='other_menu_icon fa fa-envelope-o'></i>
+				<div class='other_menu_item'> Send a Suggestion </div>
+			</div>
+		</div>
+
+	</div>
+
+	<center> <video id='video' src='https://merkoba.nyc3.digitaloceanspaces.com/hbv/{{video_id}}.{{extension}}' controls='controls' autoplay='on'></video> </center>
+
+	<div id='hover_comments_container'>
+		<div id='form_container'>
+			<textarea id='board_post_text' rows=5></textarea>
+			<button class='unselectable' id='comment_submit' onclick='submit_comment_form()'> leave a comment </button>
+		</div>
+		<div id='hover_comments_inner'></div>
+	</div>
+
+	<div id='hover_suggestions_container' class='unselectable'>
+		<input type='text' placeholder='search...' id='hover_suggestions_filter'>
+		<div id='hover_suggestions_inner'></div>
+	</div>
+
+	<div id='popup_post' class='centered'></div>
+
+	<img src='/media/img/play.png' id='play_icon' class='centered'>
+
+	<div id='suggestion_form'>
+		<textarea id='suggestion_text'></textarea>
+		<button id='suggestion_btn' onclick='send_suggestion()'> send suggestion </button>
+		<button id='suggestion_btn_close' onclick='hide_suggestion_form()'> close </button>
+	</div>
+
+	<div id='volume_level'></div>
+
+{% endblock %}
+

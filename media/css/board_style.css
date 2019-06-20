@@ -1,0 +1,302 @@
+.logo
+{
+	height: 30px;
+	float: left;
+	padding-right: 0.4em;
+	padding-top: 0.4em;
+	padding-left: 0.5em;
+}
+
+.header_text
+{
+	font-size: 2em;
+	padding-top: 0em;
+	float: left;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.v1
+{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.v2
+{
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.v3
+{
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.v03
+{
+	padding-top: 0.15em;
+	padding-bottom: 0.15em;
+}
+
+.v05
+{
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+#new_board_form
+{
+	padding-left: 0.7em;
+}
+
+#posts
+{
+	text-align: center;
+	padding-bottom: 3em;
+}
+
+#posts:empty
+{
+    padding-bottom: 0em;
+}
+
+.post_image
+{
+	float: left;
+	padding-right: 0.9em;
+	padding-bottom: 0.9em;
+}
+
+.image_link
+{
+	display:table-cell;
+	vertical-align: top;
+	float: left;
+}
+
+.post_details
+{
+	display: table-cell;
+	font-size: 0.8em;
+}
+
+.post_date
+{
+	float: left;
+	cursor: pointer;
+}
+
+.thread_date
+{
+	float: left;
+	padding-right: 0.7em;
+}
+
+.post_number
+{
+	padding-left: 0.7em;
+	float: left;
+	padding-right: 0.7em;
+}
+
+.post_text
+{
+	color: white;
+	font-size: 1.2em;
+	word-wrap: break-word;
+}
+
+.post_text a:link
+{
+	color: #5F89AC;
+	text-decoration: underline;
+}
+
+.post_text a:visited
+{
+	color: #5F89AC;
+	text-decoration: underline;
+}
+
+.post_text a:hover
+{
+	color: #5F89AC;
+	text-decoration: underline;
+}
+
+a.respond:link, a.respond:visited, a.respond:hover
+{
+	color: #5F89AC;
+	text-decoration: underline;
+}
+
+.reply
+{
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 0.1em;
+	background-color: #282A2E;
+	display: inline-block;
+	border: 1px #282A2E solid;
+	text-align: left;
+	width: 60%;
+}
+
+#popup_post
+{
+	position: absolute;
+	display: none;
+	background-color: #1D1D21;
+	top: 0px;
+	left: 0px;
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	border: 1px #42464C solid;
+	z-index: 99999999999;
+	overflow: hidden;
+}
+
+#image_hover
+{
+	position: fixed;
+	top: 0em;
+    right: 0em;
+    max-width: 500px;
+}
+
+#popup_form
+{
+	display: none;
+	position: fixed;
+	top: 2em;
+	right: 0em;
+	background-color: #42464C;
+	padding: 0.5em;
+}
+
+.respond
+{
+	color: #5F89AC;
+	text-decoration: underline;
+	float: left;
+	cursor: pointer;
+	padding-left: 1.4em;
+	padding-right: 0.3em;
+}
+
+.admin_menu
+{
+	padding-left: 0.7em;
+	color: #5F89AC;
+	text-decoration: underline;
+	float: left;
+	cursor: pointer;
+}
+
+.quote
+{
+	color: #5F89AC;
+	text-decoration: underline;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.close_form
+{
+	cursor: pointer;
+	color: white;
+	padding-bottom: 0.4em;
+}
+
+.floater
+{
+	float: left;
+}
+
+.reply_count
+{
+	float: left;
+	padding-right: 0.7em;
+}
+
+.arrow
+{
+	color: #B0BD68;
+	display: inline-block;
+}
+
+.highlight
+{
+	background-color: #1D1D21;
+	border: 1px #111 solid;
+}
+
+.header_quote
+{
+	padding-left: 0.7em;
+	color: #5F89AC;
+	text-decoration: underline;
+	float: left;
+	cursor: pointer;
+}
+
+.op
+{
+	border: 1px #1D1F21 solid;
+}
+
+.message
+{
+	padding: 2em;
+	font-size: 2em;
+}
+
+textarea
+{
+	width: 99.7%;
+	font-size: 1.4em;
+	resize: none;
+	background-color: #99a2bd;
+	border: 0px solid black;
+}
+
+button
+{
+	width: 100%;
+	font-size: 1.4em;
+	background: #8595C1;
+	border: 1px solid #000;
+	color: black;
+}
+
+button:hover
+{
+	background: #7689bd;
+}
+
+#form_container
+{
+	text-align: center;
+}
+
+#board_post_text_popup
+{
+	width: 100%;
+}
+
+#reply_popup_submit
+{
+	width: 100%;
+}
+
+.update_info
+{
+	text-align: center;
+}

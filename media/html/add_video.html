@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+	<title> Add Video - Handbeezy </title>
+	<style>
+		body, html 
+		{
+			background-color: #8BC067;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+		body > * 
+		{ 
+			text-align: left; 
+		}
+		a:link, a:hover, a:visited
+		{
+			color: #5B5180;
+			font-size: 1.2em;
+			padding-right: 1.4em;
+		}
+		a.simple:link, a.simple:hover, a.simple:visited
+		{
+			color: #5B5180;
+			font-size: 1.2em;
+			padding-right: 1.4em;
+			text-decoration: none;
+		}
+		#file_checkmark 
+		{
+			display: none;
+			padding-left: 0.3em;
+		}
+		.form_details
+		{
+			font-size: 0.4em;
+		}
+	</style>
+	<script type="text/javascript">
+	    csrf_token = "{{csrf_token}}";
+	    $(function()
+	    {
+	        activate_key_detection();
+	        activate_file_detection();
+	        uploading_video = false;
+	    })
+	 </script>
+
+{% endblock %}
+
+{% block body %}
+		
+	<form id='add_video_form' name='form' action='/' method='post' enctype='multipart/form-data'> {% csrf_token %}
+		<a target='_blank' href='/nignog/'><img id='nignog' src='/media/img/nignog.png'></a>
+	    <div id='form_right'>
+
+	    	<a href='http://wok3n.com/add_track/'>upload a song</a>
+
+	    	<div class='v1'></div>
+
+		    <div id='add_file_info'> choose a video <span class='form_details'>porn is not allowed</span></div>
+		    <input type='file' id='file_picker' name='video' accept='.webm, .mp4'> <i id='file_checkmark' class='fa fa-check'> nice video </i>
+		    <div id='add_file_alert'> max file size is 100mb </div>
+
+		    <!-- <input type='checkbox' name='nsfw' id='nsfw'> nsfw (check this if you're uploading porn etc) -->
+
+		    <div style='padding-bottom:1.4em'></div>
+
+		    <span id='add_file_info'> choose a title </span> &nbsp; <a class='simple' href='#' onclick='detect_file_name(); return false;'> detect from file </a>
+
+		    <br><br>
+
+		    <input type='text' id='input_video_title' name='title'>
+
+		    <div class='v2'></div>
+		
+		    <a href='#' onclick='do_upload(); return false;' id='btn_upload'>start upload</a>  &nbsp;&nbsp;&nbsp; <a href='/'>go back</a>  &nbsp;&nbsp;&nbsp; <a href='/catalog'>catalog</a>
+
+		    <div class='v3'></div> 
+
+		    <div> note: you must wait 2 minutes after your last upload to upload again </div>
+
+		    <br><br>
+
+		    <div> note: you will be able to edit the video afterwards </div>
+
+		</div>
+	</form>
+		
+{% endblock%}
+

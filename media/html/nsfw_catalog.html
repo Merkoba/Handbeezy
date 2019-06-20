@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+
+	<title> NSFW Catalog - Handbeezy </title>
+	<script type="text/javascript">
+	    $(function()
+	    {
+			nsfw_catalog_check();
+	        activate_key_detection();
+	        $('#input_catalog_search_nsfw').focus();
+	        enable_jumper();
+	    })
+	 </script>
+
+	 <style>
+	 	.button_catalog_search
+	 	{
+	 		width: 5em !important;
+	 		height: 2em !important;
+	 	}
+	 </style>
+
+{% endblock %}
+
+{% block body %} 
+
+	<div id='nsfw_overlay'></div>
+
+	<div id='catalog_menu'>
+		<div class='catalog_titulo'>NSFW Catalog</div>
+		<a class='ext' href='/'>main</a>
+		<a class='ext' href='/add_video'>add video</a>
+		<a class='ext' href='/likes'>liked</a>
+		<a class='ext' href='/watched'>watched</a>
+		<a class='ext' href='/uploaded'>uploaded</a>
+		<a class='ext' href='/catalog'>catalog</a>
+		<a class='ext' href='http://handbeezy.com/ads'>ads</a>
+		<a class='ext' href='http://wok3n.com'>music</a>
+		<br><br>
+		<input type='text' id='input_catalog_search_nsfw'>
+		<button style='font-size: 1.4em; padding: 0.3em'class='button_catalog_search' onclick='search_catalog_nsfw()'> search </button>
+	</div>
+
+	<div id='jumper' onclick='jump()'> &uarr; </div>
+
+	<div id='entries'> {{entries | safe}} </div>
+
+{% endblock %}
+

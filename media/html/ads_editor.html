@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title> Wotz Bemkp </title>
+		<style>
+			body, html 
+			{
+				font-size: 30px;
+				color: white;
+				background-color: #1D1F21;
+			}
+			.link 
+			{
+				color: #A7C0DC;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+
+		<form action='.' method='POST' name='form'>{% csrf_token %}
+			text
+			<input type='text' name='text' size='50'>
+			<br>
+			url &nbsp;
+			<input type='text' name='url' size='50'>
+<!-- 			<br>
+			nsfw <input type='checkbox' name='nsfw'>  -->
+			<br>
+			pw &nbsp; <input type='password' value='{{pw}}' size='5' name='password'>
+			<br><br>
+			<input type='submit'>
+		</form>
+
+		<br>
+
+		{% for ad in ads %}
+			<div> {{ad.text}} </div>
+			<div> {{ad.url}} </div>
+			<div> {{ad.date}} </div>
+<!-- 			{% if ad.nsfw %}
+				<div> NSFW </div>
+			{% else %}
+				<div> safe </div>
+			{% endif %} -->
+			<span class='link' onclick="window.location='/edit_one_ad/{{ad.id}}/{{pw}}'"> edit </span>
+			&nbsp;&nbsp;&nbsp;
+			<span class='link' ondblclick="window.location='/delete_ad/{{ad.id}}/{{pw}}'"> delete </span>
+			<br><br><br>
+		{% endfor %}
+	</body>
+</html>

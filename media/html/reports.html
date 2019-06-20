@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title> Bitz Kraft </title>
+		<style>
+			body, html 
+			{
+				font-size: 30px;
+				color: white;
+				background-color: #1D1F21;
+			}
+		</style>
+	</head>
+	<body>
+
+		<br>
+
+		{% for r in reports %}
+
+		<a target='_blank' href='/{{r.video.uid}}'>{{r.video.id}}</a> &nbsp;&nbsp;&nbsp;
+		{{r.ip}} &nbsp;&nbsp;&nbsp;
+		{{r.type}} &nbsp;&nbsp;&nbsp;
+		{{r.date}} &nbsp;&nbsp;&nbsp;
+		<a target='_blank' href='/{{r.video.uid}}/edit/pauver'>edit</a>
+
+
+		<br><br>
+
+		{% endfor %}
+
+	</body>
+</html>

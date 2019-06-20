@@ -1,0 +1,103 @@
+<html>
+
+	<head>
+		<title> enter </title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/media/img/favicon.ico" type="image/x-icon"> 
+		<script type="text/javascript" src="/media/js/jquery.js"></script>
+		<script type="text/javascript">
+		    function activate_key_detection()
+		    {
+		         $(document).keydown(function(e)
+		         {
+		            code = (e.keyCode ? e.keyCode : e.which);
+
+		            if(code === 13)
+		            {
+		                if($('#username').is(':focus') || $('#password').is(':focus'))
+		                {
+		                    document.form.submit();
+		                }
+		            }
+
+		         });
+		    }
+
+		    function play_wiseau_audio()
+		    {
+		    	new Audio('/media/audio/so_beautiful.ogg').play();
+		    }
+
+		    $(function()
+		    {
+		        activate_key_detection();
+		        $('#username').focus();
+		    })
+		 </script>
+
+		 <style>
+
+		    body, html 
+		    {
+		        font-family: sans-serif;
+		        background-color: #8BC067; 
+		    }
+
+		    #form
+		    {
+	    		color: white;
+	    	    padding: 20px;
+	    	    position: fixed;
+	    	    left: 50%;
+	    	    top: 10%;
+	    	    margin-top: -50px;
+	    	    margin-left: -400px;
+	    	    width: 800px;
+	    	    height: 100px;
+	    	    z-index: 999999;
+		    }
+
+		    #username
+		    {
+		        width:14em;
+		        height:2em;
+		        font-size: 3em;
+		        padding: 0.2em;
+		        color: #5F5F5F;		    }
+
+		    #password
+		    {
+		        width:14em;
+		        height:2em;
+		        font-size: 3em;
+		        padding: 0.2em;
+		        color: #5F5F5F;
+		    }
+
+		    #separator
+		    {
+		    	padding-bottom: 2em;
+		    }
+
+		    #wiseau
+		    {
+		    	display: block;
+		    	cursor: pointer;
+		    }
+
+		 </style>
+	</head>
+
+	<body>
+
+		<form method='post' action='.' name='form' id='form'> {% csrf_token %}
+			<img id='wiseau' src='/media/img/wiseau.png' onclick='play_wiseau_audio()'>
+		    <div id='separator'></div>
+		    <input type='text' id='username' name='username' placeholder='username'>
+		    <div id='separator'></div>
+		    <input type='password' id='password' name='password' placeholder='password'>
+		</form>
+
+	</body>
+	
+</html>

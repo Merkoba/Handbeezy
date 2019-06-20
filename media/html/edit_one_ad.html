@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title> Pifkz Ramv </title>
+		<style>
+			body, html 
+			{
+				font-size: 30px;
+				color: white;
+				background-color: #1D1F21;
+			}
+		</style>
+	</head>
+	<body>
+
+		<form action='.' method='POST' name='form'>{% csrf_token %}
+			text
+			<input type='text' name='text' size='50' value='{{ad.text}}'>
+			<br>
+			url &nbsp;
+			<input type='text' name='url' size='50' value='{{ad.url}}'>
+<!-- 			<br>
+			{% if ad.nsfw %}
+				nsfw <input type='checkbox' name='nsfw' checked> 
+			{% else %}
+				nsfw <input type='checkbox' name='nsfw'> 
+			{% endif %} -->
+			<br>
+			<span title='Update the date to now'>udate</span> <input type='checkbox' name='udate'>
+			<br>
+			pw &nbsp; <input type='password' value='{{pw}}' size='5' name='password'>
+			<br><br>
+			<input type='submit'>
+		</form>
+
+	</body>
+</html>

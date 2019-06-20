@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title> Rokben Trakt </title>
+		<style>
+			body, html 
+			{
+				font-size: 30px;
+				color: white;
+				background-color: #1D1F21;
+			}
+		</style>
+	</head>
+	<body>
+
+		<br>
+
+		{% for s in suggestions %}
+
+			{{s.date}}
+			<br>
+			{{s.text}}
+
+			<br><br><br>
+
+		{% endfor %}
+
+	</body>
+</html>
