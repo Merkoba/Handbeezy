@@ -26,13 +26,13 @@ from server.models import *
 
 from bs4 import BeautifulSoup
 
-videos_root = "https://merkoba.nyc3.digitaloceanspaces.com/hbv"
-thumbs_root = "https://merkoba.nyc3.digitaloceanspaces.com/hbt"
+videos_root = "https://vvvvvvvvvv/hbv"
+thumbs_root = "https://xxxxxxxxx/hbt"
 
 spaces_client = boto3.session.Session().client('s3',
-      endpoint_url='https://nyc3.digitaloceanspaces.com',
-      aws_access_key_id='MJMDTPGMYVI77OEKNJ6H',
-      aws_secret_access_key='WL1VjEXhOPlNYxcaMw/yxhb4HGrXje4O3L9oKCL2aOo')
+      endpoint_url='aaaaaa',
+      aws_access_key_id='bbbbbbbb',
+      aws_secret_access_key='ccccccccccc')
 
 spaces_transfer = S3Transfer(spaces_client)
 
